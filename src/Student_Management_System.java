@@ -15,9 +15,11 @@ public class Student_Management_System {
             SelectMultipleStudents selectMultipleStudents = new SelectMultipleStudents();
             UpdateMultipleStudents updateMultipleStudents = new UpdateMultipleStudents();
             DeleteMultipleStudents deleteMultipleStudents = new DeleteMultipleStudents();
+            SelectStudentAll selectStudentAll = new SelectStudentAll();
+            DeleteStudentAll deleteStudentAll = new DeleteStudentAll();
             Scanner scan = new Scanner(System.in);
             System.out.println("\n\n");
-            System.out.println("Enter your command(insert/select/update/insert multiple/select multiple/delete/delete multiple), Enter 'stop' for end the Application :");
+            System.out.println("Enter your command(insert/select/select all/update/insert multiple/select multiple/delete/delete multiple), Enter 'stop' for end the Application :");
             String a = scan.nextLine();
             if (a.equals("insert")) {
                 System.out.println("INSERT:");
@@ -26,7 +28,7 @@ public class Student_Management_System {
             if (a.equals("select")) {
                 System.out.println("SELECT:");
                 System.out.println("Enter the Id of Student:");
-                selectstudent.selectStudnet(scan.nextInt());
+                selectstudent.selectStudent(scan.nextInt());
             }
             if (a.equals("update")) {
                 updatestudent.updatestudent();
@@ -54,6 +56,11 @@ public class Student_Management_System {
                 }
                 selectMultipleStudents.selectmultiplestudent(ids);
             }
+            if (a.equals("select all")) {
+                System.out.println("SELECT All:");
+                selectStudentAll.selectStudentAll();
+            }
+
             if (a.equals("update multiple")) {
                 System.out.println("UPDATE MULTIPLE:");
                 System.out.println("Enter the number of Students:");
@@ -63,8 +70,18 @@ public class Student_Management_System {
             }
             if (a.equals("delete multiple")) {
                 System.out.println("DELETE MULTIPLE:");
-                System.out.println("Enter the ids of Student:");
-                deleteMultipleStudents.deletemultiplestudents(scan.next());
+                System.out.println("Enter the number of Students:");
+                int n = scan.nextInt();
+                List<Integer> integerList = new ArrayList<>();
+                for(int j = 0 ; j< n ; j++){
+                    System.out.println("Enter the id of student:"+(j+1));
+                    integerList.add(scan.nextInt());
+                }
+                deleteMultipleStudents.deletemultiplestudents(integerList);
+            }
+            if (a.equals("delete all")) {
+                System.out.println("DELETE ALL:");
+                deleteStudentAll.deleteStudentAll();
             }
             if (a.equals("stop")) {
                 break;

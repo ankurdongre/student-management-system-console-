@@ -13,10 +13,10 @@ public class UpdateStudent {
         student.setId(scan.nextInt());
         System.out.println("Enter the Name of Student:");
         student.setName(scan.next());
-        System.out.println("Enter the Address of Student:");
-        student.setAddress(scan.next());
         System.out.println("Enter the Email of Student:");
         student.setEmail(scan.next());
+        System.out.println("Enter the Address of Student:");
+        student.setAddress(scan.next());
         System.out.println("Enter the Branch of Student:");
         student.setBranch(scan.next());
         System.out.println("Enter the Year of Student:");
@@ -30,8 +30,7 @@ public class UpdateStudent {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(url,user,pass);
             Statement st = con.createStatement();
-            st.executeUpdate("update student set id = '"+
-                    student.getId()+"' ,name = '"+
+            st.executeUpdate("update student set name = '"+
                     student.getName()+"' , email = '"+
                     student.getEmail()+"',address = '"+
                     student.getAddress()+"',current_course='"+
@@ -44,6 +43,6 @@ public class UpdateStudent {
         System.out.println("\n");
         System.out.println("\n");
         System.out.println("\n");
-        ss.selectStudnet(student.getId());
+        ss.selectStudent(student.getId());
     }
 }

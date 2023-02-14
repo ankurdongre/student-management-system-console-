@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class SelectStudent {
-    void selectStudnet(int id) {
+    void selectStudent(int id) {
         Student student = new Student();
         try {
             String url = "jdbc:mysql://localhost:3306/student_management_system";
