@@ -3,7 +3,6 @@ This project require some application/software to run it.
 The application necessary to install are as follows:-
 a. IntelliJ Idea, 
 b. Java 1.8, 
-c. Postman.
 d. XAMPP
 
 1st download the project file (student_management_system_console).
